@@ -1,12 +1,15 @@
 package cc.ibooker.zgraphics;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -47,7 +50,7 @@ public class CanvasView extends View {
         canvas.drawColor(Color.BLACK);
 
         // 设置裁剪区域
-        canvas.clipRect(10, 10, 380, 360);
+        canvas.clipRect(10, 10, 680, 360);
 
         // 锁定画布
         canvas.save();
@@ -94,5 +97,21 @@ public class CanvasView extends View {
         mPaint.setColor(Color.LTGRAY);
         mPaint.setStrokeWidth(3);
         canvas.drawLine(5, 110, 315, 110, mPaint);
+
+        // 画图片
+        Bitmap bitmapI = ((BitmapDrawable) getResources().getDrawable(R.mipmap.ic_launcher)).getBitmap();
+        canvas.drawBitmap(bitmapI, 360, 80, null);
+
+        // Matrix 3x3矩阵  实现旋转图片
+        Matrix matrix = new Matrix();
+        // 设置旋转
+        matrix.setRotate(30);
+        Bitmap bitmap = Bitmap.createBitmap(bitmapI, 0, 0, bitmapI.getWidth(), bitmapI.getHeight(), matrix, true);
+        canvas.drawBitmap(bitmap, 460, 80, null);
+
+        // Matrix 3x3矩阵  实现缩放图片
+        matrix.postScale(1.5F, 1.5F);
+        Bitmap bitmap2 = Bitmap.createBitmap(bitmapI, 0, 0, bitmapI.getWidth(), bitmapI.getHeight(), matrix, true);
+        canvas.drawBitmap(bitmap2, 460, 120, null);
     }
 }

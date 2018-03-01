@@ -11,11 +11,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intnet = new Intent(this, PaintActivity.class);
-        startActivity(intnet);
+//        Intent intnet = new Intent(this, PaintActivity.class);
+//        startActivity(intnet);
 
-//        Intent intent = new Intent(this, CanvasActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this, CanvasActivity.class);
+        startActivity(intent);
 
     }
 }
