@@ -14,7 +14,10 @@ public class MainActivity extends AppCompatActivity {
 //        Intent intnet = new Intent(this, PaintActivity.class);
 //        startActivity(intnet);
 
-        Intent intent = new Intent(this, CanvasActivity.class);
+//        Intent intent = new Intent(this, CanvasActivity.class);
+//        startActivity(intent);
+
+        Intent intent = new Intent(this, CameraActivity.class);
         startActivity(intent);
 
     }

@@ -114,5 +114,6 @@ public class CanvasView extends View {
         matrix.postScale(1.5F, 1.5F);
         Bitmap bitmap2 = Bitmap.createBitmap(bitmapI, 0, 0, bitmapI.getWidth(), bitmapI.getHeight(), matrix, true);
         canvas.drawBitmap(bitmap2, 460, 120, null);
+
     }
 }

@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".PaintActivity" />
         <activity android:name=".CanvasActivity" />
+        <activity android:name=".CameraActivity" />
     </application>
 
 </manifest>
