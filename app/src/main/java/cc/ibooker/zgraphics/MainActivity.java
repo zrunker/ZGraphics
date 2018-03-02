@@ -3,6 +3,8 @@ package cc.ibooker.zgraphics;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,14 +13,32 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        Intent intnet = new Intent(this, PaintActivity.class);
-//        startActivity(intnet);
+        TextView paintTv = findViewById(R.id.tv_paint);
+        paintTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intnet = new Intent(MainActivity.this, PaintActivity.class);
+                startActivity(intnet);
+            }
+        });
 
-//        Intent intent = new Intent(this, CanvasActivity.class);
-//        startActivity(intent);
+        TextView canvasTv = findViewById(R.id.tv_canvas);
+        canvasTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CanvasActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        Intent intent = new Intent(this, CameraActivity.class);
-        startActivity(intent);
+        TextView cameraTv = findViewById(R.id.tv_camera);
+        cameraTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
