@@ -100,6 +100,7 @@ public class CanvasView extends View {
 
         // 画图片
         Bitmap bitmapI = ((BitmapDrawable) getResources().getDrawable(R.mipmap.ic_launcher)).getBitmap();
+//        BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
         canvas.drawBitmap(bitmapI, 360, 80, null);
 
         // Matrix 3x3矩阵  实现旋转图片
